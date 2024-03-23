@@ -2,8 +2,8 @@
 Title: Securing Azure Functions with OAuth2 Authentication
 Description: Learn how to secure your Azure Functions with OAuth2 authentication using Azure Active Directory (AAD).
 Tags: azure, azure-functions, oauth2, authentication, aad, security
-Date: 2022-10-01
-Last Updated: 2022-10-01
+Date: 2024-03-23
+Last Updated: 2024-03-24
 ---
 
 # Securing Azure Functions with OAuth2 Authentication
