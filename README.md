@@ -87,20 +87,19 @@ Open up a browser, I’d recommend in incognito/in-private mode. We now need to 
 https://login.microsoftonline.com/<Tenant ID>/oauth2/v2.0/authorize
     ?client_id=<Client ID>
     &response_type=code
-    &redirect_uri=<Redirect URL>
+    &redirect_uri=https%3A%2F%2F<Function Name>.azurewebsites.net%2F.auth%2Flogin%2Faad%2Fcallback
     &response_mode=fragment
     &scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fuser.read
     &state=12345
 ```
 
-Once you have the URL, paste it into the browser and hit enter. You will be redirected to the Microsoft login page. Enter your credentials and sign in. You will then be redirected to the Azure Function. After successful authentication, you will be able to execute the Azure Function. 
+Once you have the URL, paste it into the browser and hit enter. You will be redirected to the Microsoft login page. Enter your credentials and sign in. You will then be redirected to the Azure Function. 
 
+![alt text](/doc/.attachments/web-fn-200.png)
 
-```json
-{
-    "message": "Hello, <User Name>!"
-}
-```
+After successful authentication, you will be able to execute the Azure Function. 
+
+![alt text](/doc/.attachments/web-fn-run.png)
 
 
 ## Sample Client Application
