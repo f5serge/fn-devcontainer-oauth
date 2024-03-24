@@ -164,5 +164,6 @@ console.log(data);
 
 - [Authentication and authorization in Azure App Service and Azure Functions](https://learn.microsoft.com/en-us/azure/app-service/overview-authentication-authorization)
 - [Configure authentication provider in Azure App Service](https://learn.microsoft.com/en-us/azure/app-service/configure-authentication-provider-aad?tabs=workforce-tenant)
+- [Add OAuth2 implicit flow to Azure Function](https://blog.powney.info/2019/05/add-oauth-implicit-flow-to-azure-function)
 
 
