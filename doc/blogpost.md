@@ -81,9 +81,33 @@ Here's a screenshot of the AAD OAuth2 configuration in the Azure portal:
 
 ![alt text](/doc/.attachments/az-fn-authentication.png)
 
+### Testing AAD OAuth2 Authentication
+
 After configuring AAD OAuth2 authentication, you can test the Azure Function by navigating to the URL provided in the Azure portal. As far as we selected to return 401 for unauthenticated requests, you should see an HTTP 401 Unauthorized response when accessing the Function URL without authentication.
 
 ![alt text](/doc/.attachments/web-fn-401.png)
+
+Now, to authenticate and access the Azure Function, follow these steps:
+
+Open up a browser, I’d recommend in incognito/in-private mode. We now need to build up a specific URL to call MS Identity and authenticate. All of the below should be on one line, but has been broken over multiple lines so it is easier to read.
+
+```sh
+https://login.microsoftonline.com/<Tenant ID>/oauth2/v2.0/authorize
+    ?client_id=<Client ID>
+    &response_type=code
+    &redirect_uri=https%3A%2F%2F<Function Name>.azurewebsites.net%2F.auth%2Flogin%2Faad%2Fcallback
+    &response_mode=fragment
+    &scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fuser.read
+    &state=12345
+```
+
+Once you have the URL, paste it into the browser and hit enter. You will be redirected to the Microsoft login page. Enter your credentials and sign in. You will then be redirected to the Azure Function. 
+
+![alt text](/doc/.attachments/web-fn-200.png)
+
+After successful authentication, you will be able to execute the Azure Function. 
+
+![alt text](/doc/.attachments/web-fn-run.png)
 
 
 
